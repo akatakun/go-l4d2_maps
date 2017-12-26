@@ -1,0 +1,4 @@
+package: github.com/akatakun/go-l4d2_maps
+import:
+- package: github.com/cheggaaa/pb
+  version: ^2.0.6
