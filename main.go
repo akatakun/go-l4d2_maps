@@ -65,6 +65,9 @@ func main() {
 	reader := bufio.NewReaderSize(fp, 4096)
 	for {
 		line, _, err := reader.ReadLine()
+		if err == io.EOF {
+			break
+		}
 		if err != nil {
 			fmt.Fprintln(os.Stdout, err)
 			os.Exit(1)
@@ -74,10 +77,6 @@ func main() {
 		if er != nil {
 			fmt.Fprintln(os.Stdout, er)
 			os.Exit(1)
-		}
-
-		if err != io.EOF {
-			break
 		}
 	}
 
